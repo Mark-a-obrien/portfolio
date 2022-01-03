@@ -2,40 +2,27 @@
 // container
 let container = document.querySelector("#container");
 
-// create question
-function createQuestion(titleText, options) {
+// create question div
+let question = document.createElement("div");
+question.classList.add("question");
 
-    // div
-    let div = document.createElement("div");
-    div.classList.add("question")
+// title of the question 
+let title = document.createElement("h2");
+title.textContent = "What is the capital of Russia?";
 
-    // title
-    let title = document.createElement("h2");
-    title.textContent = titleText;
-
-    // create options
-    let checkboxes = createOptions(options);
-
-
-    // appending children
-    div.appendChild(title)
-    container.appendChild(div);
-}
-
-// create options
-function createOptions(options) {
-    
-    let checkbox = createElement("input");
-    checkbox.type = "checkbox";
-
-    let checkboxes = Array(checkbox, options[0], checkbox, options[1], checkbox, options[2], checkbox, options[3]); 
-
-    return checkboxes;
-
-}
+// question options
+let option = document.createElement("input");
+option.type = "radio";
+option.name = "capital";
+option.value = "Dublin";
+let label = document.createElement("label");
+label.for = option.value;
+label.textContent = option.value;
 
 
-// game 
-function game() {
-    createQuestion('What is the capital of Russia?');
-}
+
+// append
+question.appendChild(option)
+question.appendChild(label)
+question.appendChild(title)
+container.appendChild(question);
