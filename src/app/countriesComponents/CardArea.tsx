@@ -22,7 +22,7 @@ const CardArea = ({search, filter, countries, handleClick}: {search:string, filt
         countries.map((country: { flags?: any; name?: any; population?: any; region?: any; capital?: any; }, index: Key | null | undefined) => (
         //   <img key={index} src={country.flags.png} alt='flag' width={100} />
 
-        ( checkSearch(country.name.official) && checkFilter(country.region)) && <Card key={index} imgSrc={country.flags.png} country={country.name.official} population={country.population} region={country.region} capital={country.capital} countryObj={country} handleClick={handleClick} />
+        ( checkSearch(country.name.common) && checkFilter(country.region)) && <Card key={index} imgSrc={country.flags.png} country={country.name.common} population={country.population} region={country.region} capital={country.capital} countryObj={country} handleClick={handleClick} />
         
         
 

@@ -38,7 +38,7 @@ const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBack
         </div>
         <div className="flex flex-col gap-4">
           
-          <h1 className="text-detail-page font-bold">{country.name.official}</h1>
+          <h1 className="text-detail-page text-3xl font-bold">{country.name.common}</h1>
 
           <div className="flex lg:flex-row mobile:flex-col gap-10">
             
@@ -53,7 +53,7 @@ const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBack
             <div className="flex flex-col gap-2">
               <div className="flex gap-2"><p>Top Level Domain: </p><p className="font-extralight">{country.tld[0]}</p></div>
               <div className="flex gap-2"><p>Currencies: </p><p className="font-extralight">{currency.name}</p></div>
-              <div className="flex gap-2"><p>Languages: </p><div className="font-extralight">{languages.map( (lan:string, i:string) => <p key={i}>{lan}</p>)}</div></div>
+              <div className="flex gap-2"><p>Languages: </p><div className="flex font-extralight">{languages.map( (lan:string, i:string) => <p key={i}>{lan}{parseInt(i)<languages.length-1 && ","}&nbsp;</p>)}</div></div>
             </div>
           </div>
         </div>
