@@ -59,15 +59,15 @@ function onClickBackToMainArea() {
 
   
   return (
-    <div className="flex flex-col space-y-8 px-36  pb-20 bg-inherit">
+    <div className="flex flex-col space-y-8 lg:px-36 mobile:px-6 pb-20 bg-light-mode-background dark:bg-primary-navy ">
 
     {country ? <CardDetials country={country} onClickBackToMainArea={onClickBackToMainArea} /> :
     
     
     <>
     <section>
-        <form className="flex justify-between" method="post"  onSubmit={handleSubmit}>
-          <input className="p-2 bg-sub-navy" type="text" name="search" id="search" onInput={handleInput} placeholder="Search for a country...." defaultValue={String(search)}/>
+        <form className="flex lg:justify-between lg:flex-row mobile:flex-col mobile:align-bottom  mobile:gap-4" method="post"  onSubmit={handleSubmit}>
+          <input className="p-2 dark:bg-sub-navy dark:text-white card-box-shadow" type="text" name="search" id="search" onInput={handleInput} placeholder="Search for a country...." defaultValue={String(search)}/>
           {/* <button type="submit">Search</button> */}
 
           <DropdownMenu onInput={handleFilterInput} filter={String(filter)} />
@@ -79,13 +79,6 @@ function onClickBackToMainArea() {
       </main>
       </>
     }
-    
-
-    
-
-
- 
-
     </div>
   )
 }
