@@ -1,5 +1,11 @@
 "use client"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library} from "@fortawesome/fontawesome-svg-core";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faArrowLeft);
+
 
 const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBackToMainArea:any}) => {
 
@@ -20,13 +26,13 @@ const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBack
 
   // console.log(languages);
   return (
-    <section className="flex flex-col space-y-8">
+    <section className="flex flex-col space-y-20 dark:text-white ">
 
       <div>
-        <button className="py-1  px-8 bg-sub-navy rounded-md" onClick={onClickBackToMainArea}>Back</button>
+        <button className="py-1 px-8 dark:bg-sub-navy rounded-md card-box-shadow" onClick={onClickBackToMainArea}><FontAwesomeIcon className="pr-2" icon={faArrowLeft} />Back</button>
       </div>
 
-      <section className="flex gap-28">
+      <section className="flex lg:flex-row lg:gap-28 mobile:flex-col mobile:gap-8">
         <div>
           <img className="w-96" src={country.flags.png} alt="Flag" />
         </div>
@@ -34,7 +40,7 @@ const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBack
           
           <h1 className="text-detail-page font-bold">{country.name.official}</h1>
 
-          <div className="flex gap-10">
+          <div className="flex lg:flex-row mobile:flex-col gap-10">
             
             <div className="flex flex-col gap-2">
               <div className="flex gap-2"><p>Native Name: </p><p className="font-extralight">{nativeName.official}</p></div>

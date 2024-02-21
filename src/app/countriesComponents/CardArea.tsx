@@ -17,7 +17,7 @@ const CardArea = ({search, filter, countries, handleClick}: {search:string, filt
   }
 
   return (
-    <div className='grid grid-cols-4 gap-20'>
+    <div className='grid lg:grid-cols-4 lg:gap-20 mobile-cols-1 mobile:gap-10'>
       {countries &&
         countries.map((country: { flags?: any; name?: any; population?: any; region?: any; capital?: any; }, index: Key | null | undefined) => (
         //   <img key={index} src={country.flags.png} alt='flag' width={100} />

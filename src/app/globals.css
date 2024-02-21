@@ -8,13 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -30,4 +30,17 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.card-box-shadow {
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.58);
+-moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.58);
+box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.58);
+}
+
+.header-box-shadow {
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.58);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.58);
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.58);
 }
