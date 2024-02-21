@@ -9,15 +9,15 @@ library.add(faArrowLeft);
 
 const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBackToMainArea:any}) => {
 
-  if (!country) return <p>Loading...</p>;
+  if (!country) return <p>Loading...</p>; // returns loading when waiting for data froma api
 
   const nativeName:any = Object.values(country.name.nativeName)[0];
-
-  console.log(nativeName.official);
-
   const currency:any = Object.values(country.currencies)[0];
-
   const languages:any = [];
+
+  const population = new Intl.NumberFormat('en-us',).format(
+    country.population,
+  );
 
   for (let i = 0; i < Object.values(country.languages).length; i++) {
     const element = Object.values(country.languages)[i];
@@ -44,7 +44,7 @@ const CardDetials = ({country, onClickBackToMainArea}: {country:any, onClickBack
             
             <div className="flex flex-col gap-2">
               <div className="flex gap-2"><p>Native Name: </p><p className="font-extralight">{nativeName.official}</p></div>
-              <div className="flex gap-2"><p>Population: </p><p className="font-extralight">{country.population}</p></div>
+              <div className="flex gap-2"><p>Population: </p><p className="font-extralight">{population}</p></div>
               <div className="flex gap-2"><p>Region: </p><p className="font-extralight">{country.region}</p></div>
               <div className="flex gap-2"><p>Sub Region: </p><p className="font-extralight">{country.subregion}</p></div>
               <div className="flex gap-2"><p>Capital: </p><p className="font-extralight">{country.capital}</p></div>
